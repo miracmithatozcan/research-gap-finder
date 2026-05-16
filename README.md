@@ -1,8 +1,8 @@
-# ISEF Research Hub 🌌
+# Research Hub 🌌
 
 **DeepMind Experimental Research Hub | Büyüleyici ISEF Projeleri Keşif Portalı**
 
-Bu proje, lise ve üniversite öğrencilerinin uluslararası yarışmalara (özellikle ISEF hedefleri doğrultusunda) hazırlanırken, derin teknoloji (Deep Tech) ve ileri bilim (Advanced Science) literatüründeki güncel ve çözülmemiş araştırma açıklarını keşfetmelerini sağlayan modern bir web arayüzüdür.
+Bu proje, lise ve üniversite öğrencilerinin uluslararası yarışmalara (özellikle hedefleri doğrultusunda) hazırlanırken, derin teknoloji (Deep Tech) ve ileri bilim (Advanced Science) literatüründeki güncel ve çözülmemiş araştırma açıklarını keşfetmelerini sağlayan modern bir web arayüzüdür.
 
 ## 🚀 Özellikler
 
