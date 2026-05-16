@@ -1,170 +1,231 @@
 export const researchGaps = [
+  // MEVCUT 12 FİKİR
+  { id: 1, category: "Teknoloji ve Tasarım", domain: "Giyilebilir Sağlık Teknolojileri", subDomain: "Ter Bazlı Biyobelirteç Analizi ve Esnek Sensör Sistemleri", literatureStatus: "Mevcut ter analiz sensörleri güvenilir okuma yapabilmek için yüksek miktarda sıvı hacmine ihtiyaç duyar...", researchGap: "Ultra düşük hacimli (< 1 µL) ter örneklemesi yapabilen OECT tabanlı stabil algılama mekanizmalarının eksikliği.", isefPotential: "Enzimatik olmayan, tek atomlu katalizör tabanlı esnek bir sensör tasarlanması.", references: [{ title: "Non-enzymatic Wearable Sweat Sensors", journal: "RSC Advances (2024)", link: "https://pubs.rsc.org", doi: "10.1039/D4RA0XXXX" }], color: "#06b6d4" },
+  { id: 2, category: "Teknoloji ve Tasarım", domain: "Otonom Sistemler & Yapay Zeka", subDomain: "Kenar Bilişimde Yarı Gözetimli 3D Çevre Algılama", literatureStatus: "LiDAR sensörleri çok enerji tüketicidir. Görüntü temelli sistemler ise zorlu havada başarısızdır.", researchGap: "Sınırlı güç tüketimine (sub-5W) sahip donanımlarda, seyrek LiDAR ve monoküler kamera görüntüsünü birleştiren hafif bir Vision Transformer ağının bulunmaması.", isefPotential: "Hafifletilmiş bir seyrek-füzyon 'Vision Transformer' mimarisi kodlanıp, Jetson Nano gibi bir kenar bileşende 30+ FPS ile çalıştığı kanıtlanabilir.", references: [{ title: "Edge-Computation Constraints", journal: "IEEE Transactions (2024)", link: "https://ieeexplore.ieee.org", doi: "10.1109/TIV.2024.XXXX" }], color: "#10b981" },
+  { id: 3, category: "Kimya", domain: "Yeni Nesil Malzeme Bilimi", subDomain: "Perovskit Güneş Hücrelerinde (PSC) Çevresel Stabilite", literatureStatus: "Perovskit hücreleri nem ve UV altında hızla bozulurlar.", researchGap: "Band aralığını daraltmadan hem nem bariyeri sağlayan nanomalzemelerin (ör. MXene'ler) taşıyıcı arayüz katmanı optimizasyon eksiği.", isefPotential: "MXene katkılı yeni bir elektron taşıma katmanı sentezlenerek T80 ömrü uzatılabilir.", references: [{ title: "Moisture-induced Degradation Dynamics", journal: "Joule (2024)", link: "https://www.sciencedirect.com", doi: "10.1016/j.joule.XXXX" }], color: "#8b5cf6" },
+  { id: 4, category: "Biyoloji", domain: "Sentetik Biyoloji & Genetik", subDomain: "CRISPR-Cas9 Sistemlerinde Off-Target Etki Tahmini", literatureStatus: "CRISPR off-target tahmin araçları 3 boyutlu kromatin yapısını göz ardı eder.", researchGap: "Epigenetik işaretleyicileri entegre eden yüksek isabetli, çok-modaliteli bir off-target tahmin mimarisinin eksikliği.", isefPotential: "Açık kaynaklı verilerle Gen Dizisi GNN'i geliştirilip tahmin isabeti %20 artırılabilir.", references: [{ title: "Deep Learning Approaches for CRISPR", journal: "Nature Biotechnology (2024)", link: "https://www.nature.com", doi: "10.1038/s41587-XXXX" }], color: "#ec4899" },
+  { id: 5, category: "Kimya", domain: "İklim Teknolojileri & Karbon Yakalama", subDomain: "Direct Air Capture (DAC) Sistemleri", literatureStatus: "DAC adsorban çözeltileri ısıtma için aşırı yüksek enerji (~900°C) gerektirmektedir.", researchGap: "Ultra düşük enerjili desorpsiyon işlemi gerçekleştirebilen ışığa duyarlı MOF materyallerinin eksikliği.", isefPotential: "Güneş enerjisiyle rejenere olabilen fototermal grafen katkılı MOF sentezlenebilir.", references: [{ title: "Low-energy Regeneration of CO2", journal: "Nature Materials (2024)", link: "https://www.nature.com", doi: "10.1038/s41563-XXXX" }], color: "#f59e0b" },
+  { id: 6, category: "Fizik", domain: "Kuantum Güvenliği & Kriptografi", subDomain: "Nesnelerin İnterneti (IoT) için PQC", literatureStatus: "PQC algoritmalarının kafes-tabanlı anahtar boyutları aşırı büyüktür ve IoT cihazlarına sığmamaktadır.", researchGap: "Sınırlı RAM'e sahip ARM sistemlerde bellek gereksinimleri minimize edilmiş halka tabanlı imza düzenlerinin eksikliği.", isefPotential: "Açık kaynaklı bir PQC algoritmasının in-place bellek yönetimiyle Arduino Nano'da optimize edilmesi.", references: [{ title: "Memory Optimization for Post-Quantum", journal: "IEEE TIFS (2024)", link: "https://ieeexplore.ieee.org", doi: "10.1109/TIFS.2024.XXXX" }], color: "#6366f1" },
+  { id: 7, category: "Biyoloji", domain: "Biyomedikal Mühendisliği", subDomain: "Non-Invasive Nöro-kinetik Çözümleme", literatureStatus: "EEG tabanlı sistemler sadece basit ikili kontrol yapabilmektedir.", researchGap: "Temporal dinamiklerle sürekli (continuous 3D trajectory) bir vektör tahmini yapabilen AI modeli eksikliği.", isefPotential: "Açık kaynaklı EEG verisi kullanılarak 3D kol hareketlerini çıkaran bir Spiking Neural Network prototipi.", references: [{ title: "Continuous Decoding of 3D Arm", journal: "Journal of Neural Engineering (2024)", link: "", doi: "10.1088/1741-XXXX" }], color: "#ef4444" },
+  { id: 8, category: "Biyoloji", domain: "Tarım Teknolojileri", subDomain: "Bitkilerde Zararlı Tespitine Yönelik RNAi", literatureStatus: "Tarım ilaçları alternatifi olan RNA müdahalesi stoma dışından bitkiye giremeden parçalanmaktadır.", researchGap: "Toprağı zehirlemeyen, kalsiyum fosfat tabanlı nanotaşıyıcıların in-field optimizasyon eksikliği.", isefPotential: "Arabidopsis modeline uyumlu floresan takipli nano-RNAi kompleksi sentezlenmesi.", references: [{ title: "Nanoparticle-mediated RNAi Delivery", journal: "Nature Plants (2024)", link: "", doi: "10.1038/s41477-XXXX" }], color: "#84cc16" },
+  { id: 9, category: "Teknoloji ve Tasarım", domain: "Siber Güvenlik & Büyük Dil Modelleri", subDomain: "Adversarial Prompt Injection Savunması", literatureStatus: "Görünmez unicode saldırıları LLM güvenlik bariyerlerini kolayca aşmaktadır.", researchGap: "NLP tabanlı istatistiksel metriklerle zero-day anlamsal enjeksiyonları engelleyen 100ms altı bir Firewall katmanı.", isefPotential: "Küçük bir dil modelini LLaMA-3 önünde çalışacak bir sansürleyici firewall mimarisi (proxy) olarak kodlanması.", references: [{ title: "Vulnerabilities in LLMs", journal: "IEEE Security (2024)", link: "", doi: "10.1109/MSEC.2024.XXXX" }], color: "#f43f5e" },
+  { id: 10, category: "Kimya", domain: "Uzay Mühendisliği", subDomain: "Kendi Kendini Onaran Vitrimerler", literatureStatus: "Radyasyon uzaydaki standart polimer kapsülleri hızla degradasyona uğratır.", researchGap: "Aşırı sıcaklık farklarında (-100°C / 150°C) özelliğini yitirmeyen çapraz bağlı vitrimer epoksi sistemlerinin eksikliği.", isefPotential: "Vakum odacığında test edilecek, termal ped eklentili kendi kendine kaynaklanabilen vitrimer zırh katmanı.", references: [{ title: "Radiation-resistant Self-healing", journal: "Advanced Materials (2024)", link: "", doi: "10.1002/adma.XXXX" }], color: "#0ea5e9" },
+  { id: 11, category: "Biyoloji", domain: "Biyoinformatik", subDomain: "Uzamsal Transkriptomik Sıkıştırma", literatureStatus: "Moleküler taramalardan çıkan TB boyutlarındaki hücre lokasyon verileri bulutta analiz edilememektedir.", researchGap: "Biyolojik gen korelasyonunu kullanan yüksek verimli (lossy) tensör sıkıştırma algoritmalarının yokluğu.", isefPotential: "Gen frekanslarını 3D matrise çevirip Autoencoder kullanarak veriyi asıl boyutunun %10'una düşüren bir araç tasarımı.", references: [{ title: "Computational Challenges in Spatial Transcriptomics", journal: "Nature Genetics (2024)", link: "", doi: "10.1038/s41588-XXXX" }], color: "#3b82f6" },
+  { id: 12, category: "Fizik", domain: "Yenilenebilir Enerji", subDomain: "Katı Hal Bataryalarında Dendrit Engelleme", literatureStatus: "Katı hal pillerinde şarj esnasında lityum metali dendrit üreterek arayüzden sızmaktadır.", researchGap: "Arayüz sürtünmesini artırmadan lityum iyon akışını lokalize eden kompozit bir Katı Elektrolit Arayüzü (SEI) eksikliği.", isefPotential: "Elektro-eğirme yöntemiyle esnek bir polimer-seramik SEI kaplamasının pil döngü ömrünü artırması testi.", references: [{ title: "Suppression of Lithium Dendrites", journal: "Nature Energy (2024)", link: "", doi: "10.1038/s41560-XXXX" }], color: "#eab308" },
+
+  // YENİ EKLENEN DEVASA VERİ TABANI - FİZİK
   {
-    id: 1,
-    category: "Teknoloji ve Tasarım",
-    domain: "Giyilebilir Sağlık Teknolojileri",
-    subDomain: "Ter Bazlı Biyobelirteç Analizi ve Esnek Sensör Sistemleri",
-    literatureStatus: "Mevcut ter analiz sensörleri güvenilir okuma yapabilmek için yüksek miktarda sıvı hacmine ihtiyaç duyar, bu da ölçüm gecikmelerine yol açar. Geleneksel enzimatik biyosensörler çevresel etkilere karşı stabilite sorunu yaşamaktadır. Literatürde MOF kompozitleri ve karbon nanotüpler gibi non-enzimatik yaklaşımlar araştırılmaktadır (Kaynak: RSC Advances, 2024).",
-    researchGap: "Ultra düşük hacimli (< 1 µL) ter örneklemesi yapabilen, kapiller mikroakışkan kanallarla entegre ve enzim gerektirmeyen (non-enzymatic) OECT tabanlı stabil algılama mekanizmalarının eksikliği.",
-    isefPotential: "Enzimatik olmayan, tek atomlu katalizör tabanlı esnek bir sensör yamasının tasarlanması. Pasif mikroakışkan bir sistemle entegre edilecek bu prototipin performansı, yapay deri üzerindeki simüle edilmiş ter ile kortizol/glukoz takibi üzerinden kanıtlanabilir.",
-    references: [
-      { title: "Recent Advancements in Non-enzymatic Wearable Sweat Sensors", journal: "RSC Advances (2024)", link: "https://pubs.rsc.org", doi: "10.1039/D4RA0XXXX" },
-      { title: "Highly Active Electrocatalytic Surfaces for Sweat Metabolite Analysis", journal: "Nature Electronics (2024)", link: "https://www.nature.com/", doi: "10.1038/s41928-024-XXXXX" }
-    ],
-    color: "#06b6d4"
-  },
-  {
-    id: 2,
-    category: "Teknoloji ve Tasarım",
-    domain: "Otonom Sistemler & Yapay Zeka",
-    subDomain: "Kenar Bilişimde (Edge Computing) Yarı Gözetimli 3D Çevre Algılama",
-    literatureStatus: "LiDAR sensörleri yüksek doğruluk sunmasına rağmen çok pahalı ve enerji tüketicidir. Yalnızca görüntü işleme temelli sistemler zorlu havada başarısızdır. Literatürdeki sensör füzyon mimarileri, kısıtlı işlem gücüne sahip kenar cihazlarda çalışamayacak kadar ağırdır.",
-    researchGap: "Sınırlı güç tüketimine (sub-5W) sahip donanımlarda, seyrek LiDAR verisi ve monoküler kamera görüntüsünü gerçek zamanlı birleştirebilen optimize edilmiş hafif bir Vision Transformer ağının bulunmaması.",
-    isefPotential: "Hafifletilmiş bir seyrek-füzyon 'Vision Transformer' mimarisi kodlanabilir. Proje, Jetson Nano gibi bir kenar bileşende prototiplenerek, yapay sis/yağmur ile artırılmış nuScenes veri setinde 30+ FPS ile çalıştığı kanıtlanabilir.",
-    references: [
-      { title: "Edge-Computation Constraints and Low-Latency Challenges in Autonomous Navigation", journal: "IEEE Transactions on Intelligent Vehicles (2024)", link: "https://ieeexplore.ieee.org", doi: "10.1109/TIV.2024.XXXX" },
-      { title: "Sparse Attention Mechanisms for Low-Power Robotics and Sensor Fusion", journal: "IEEE ICRA Proceedings (2024)", link: "https://ieeexplore.ieee.org", doi: "10.1109/ICRA.2024.XXXX" }
-    ],
-    color: "#10b981"
-  },
-  {
-    id: 3,
-    category: "Kimya",
-    domain: "Yeni Nesil Malzeme Bilimi",
-    subDomain: "Perovskit Güneş Hücrelerinde (PSC) Çevresel Stabilite Optimizasyonu",
-    literatureStatus: "Perovskit güneş hücreleri yüksek enerji dönüşüm verimliliklerine (>%25) ulaşmış olsalar da nem, ısı ve UV ışını altında kalıcı bozulmaya uğrarlar. Standart kapsülleme yöntemleri bu süreci sadece geciktirmekte, yapısal entegrasyon şarj verimini düşürmektedir.",
-    researchGap: "Band aralığını daraltmadan hem nem bariyeri sağlayan hem de süper hızlı elektron transferi gerçekleştiren karbon tabanlı iki boyutlu nanomalzemelerin (ör. MXene'ler) taşıyıcı arayüz katmanı olarak optimizasyon eksiği.",
-    isefPotential: "MXene katkılı yeni bir elektron taşıma katmanı, döndürerek kaplama yöntemiyle sentezlenebilir. Geliştirilen mini prototip, kontrollü nem kabininde yaşlandırma testine tabi tutularak, TiO2 kullanan pillere göre T80 ömrünün uzadığı doğrulanabilir.",
-    references: [
-      { title: "Moisture-induced Degradation Dynamics in Perovskite Lattice Structures", journal: "Joule (2024)", link: "https://www.sciencedirect.com/journal/joule", doi: "10.1016/j.joule.2024.XXXX" },
-      { title: "Functionalized MXenes as Ultra-stable Charge Transport Buffer Layers", journal: "Energy & Environmental Science (2024)", link: "https://pubs.rsc.org", doi: "10.1039/D4EE0XXXX" }
-    ],
-    color: "#8b5cf6"
-  },
-  {
-    id: 4,
-    category: "Biyoloji",
-    domain: "Sentetik Biyoloji & Genetik",
-    subDomain: "CRISPR-Cas9 Sistemlerinde Off-Target Etki Tahmini",
-    literatureStatus: "CRISPR-Cas9 teknolojisi hedef diziyi mükemmel doğrulukta kesemediğinde 'off-target' mütasyonlara neden olmaktadır. Mevcut biyoinformatik araçlar bu etkileri tahmin edebilirken, 3 boyutlu kromatin yapısını göz ardı ettikleri için klinik doğruluk düşüktür.",
-    researchGap: "Derin öğrenme modellerinde, dizilim verilerinin yanı sıra epigenetik işaretleyicileri entegre eden yüksek isabetli, çok-modaliteli bir off-target tahmin mimarisinin eksikliği.",
-    isefPotential: "Açık kaynaklı epigenetik veritabanları ile gen dizisi verilerini birleştiren bir Graph Neural Network geliştirilerek, var olan off-target tahmin algoritmalarından en az %20 daha yüksek doğruluk oranları gösterilebilir.",
-    references: [
-      { title: "Deep Learning Approaches for CRISPR-Cas9 Off-Target Prediction Using Epigenetic Factors", journal: "Nature Biotechnology (2024)", link: "https://www.nature.com/nbt/", doi: "10.1038/s41587-024-XXXXX" },
-      { title: "Chromatin Accessibility and CRISPR Accuracy: A Machine Learning Perspective", journal: "Bioinformatics (2024)", link: "https://academic.oup.com/bioinformatics", doi: "10.1093/bioinformatics/btaeXXX" }
-    ],
-    color: "#ec4899"
-  },
-  {
-    id: 5,
-    category: "Kimya",
-    domain: "İklim Teknolojileri & Karbon Yakalama",
-    subDomain: "Direct Air Capture (DAC) Sistemleri ve MOF Validasyonu",
-    literatureStatus: "Atmosferden doğrudan karbon dioksit yakalama (DAC) sistemlerinde kullanılan adsorban çözeltileri rejenerasyon sürecinde aşırı yüksek ısıl enerji (~900°C) gerektirmektedir.",
-    researchGap: "Ultra düşük enerjili desorpsiyon işlemi gerçekleştirebilen (< 80°C sıcaklıkta karbonu serbest bırakan) fototermal yeteneğe sahip ışığa duyarlı MOF materyallerinin tasarlanma eksikliği.",
-    isefPotential: "Güneş enerjisiyle doğrudan ısınabilen, grafen oksit katkılı ışığa duyarlı bir MOF sentezlenip, oluşturulacak arduino-tabanlı küçük bir vakum-karbon sensör odacığında test edilebilir.",
-    references: [
-      { title: "Low-energy Regeneration of CO2 Adsorbents via Photothermal MOF Composites", journal: "Nature Materials (2024)", link: "https://www.nature.com/nmat/", doi: "10.1038/s41563-024-XXXXX" },
-      { title: "Thermodynamic Limitations in Current Direct Air Capture Methods", journal: "Environmental Science & Technology (2024)", link: "https://pubs.acs.org/journal/esthag", doi: "10.1021/acs.est.4cXXXXX" }
-    ],
-    color: "#f59e0b"
-  },
-  {
-    id: 6,
+    id: 13,
     category: "Fizik",
-    domain: "Kuantum Güvenliği & Kriptografi",
-    subDomain: "Nesnelerin İnterneti (IoT) için Kuantum Sonrası Şifreleme",
-    literatureStatus: "NIST bazı kuantum-sonrası kriptografik (PQC) standartları onaylasa da, bu PQC algoritmalarının kafes-tabanlı (Lattice-based) anahtar boyutları aşırı büyüktür ve akıllı saat gibi IoT cihazlarının belleğine sığmamaktadır.",
-    researchGap: "Son derece sınırlı RAM (< 16KB) ve CPU gücüne sahip ARM sistemler üzerinde çalışabilen, bellek gereksinimleri minimize edilmiş yeni nesil polinomsal halka tabanlı imza düzenlerinin optimizasyon eksikliği.",
-    isefPotential: "Açık kaynaklı bir PQC algoritması bellek tabanlı işlem tasarrufu yöntemleriyle yeniden kodlanarak; bir Arduino Nano üzerinde kuantum-güvenli veri aktarımı gecikme testiyle kanıtlanabilir.",
+    domain: "Akustik ve Metamateryaller",
+    subDomain: "Akustik Pelerinleme (Acoustic Cloaking) ve Gürültü İzolasyonu",
+    literatureStatus: "Düşük frekanslı (LFA) gürültülerin engellenmesi için devasa kalınlıkta köpükler gerekmektedir; 100 Hz altı sesler penetrasyon gücü yüksek olduğu için klasik malzemelerle durdurulamaz.",
+    researchGap: "Kalınlığı santimetre seviyesinde olup >30 dB düşük frekans sönümlemesi sağlayan çok katmanlı, 3D basılabilir Helmholtz rezonatör tabanlı topolojik akustik metamateryallerin eksikliği.",
+    isefPotential: "Matematiksel akustik modelleme (Comsol) ile spiral kanallı kompakt bir metamateryal fayansı tasarlanıp, 3D yazıcı ile basılarak düşük frekanslı ses odalarında test edilebilir.",
     references: [
-      { title: "Memory Optimization for Post-Quantum Cryptographic Protocols on Edge Nodes", journal: "IEEE Transactions on Information Forensics and Security (2024)", link: "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp", doi: "10.1109/TIFS.2024.XXXX" },
-      { title: "Lattice-based Cryptography in Constrained IoT Environments", journal: "ACM Transactions on Privacy and Security (2024)", link: "https://dl.acm.org/journal/tops", doi: "10.1145/XXXXXXX" }
+      { title: "Broadband low-frequency sound absorber using topological metamaterials", journal: "Applied Physics Letters (2024)", link: "", doi: "10.1063/5.XXXX" }
     ],
     color: "#6366f1"
   },
   {
-    id: 7,
-    category: "Biyoloji",
-    domain: "Biyomedikal Mühendisliği ve Nöroteknoloji",
-    subDomain: "Non-Invasive Beyin-Bilgisayar Arayüzlerinde Kinetik Çözümleme",
-    literatureStatus: "Felçli hastalar için uygulanan non-invaziv EEG tabanlı BCI sistemleri yoğun gürültülü veriye sahiptir. Mevcut motor-imagery sinyal işlemeleri, kişinin çok boyutlu hareket niyetlerini çözmekte başarısız olup sadece ikili tahminler yapabilmektedir.",
-    researchGap: "EEG sinyallerinden elde edilen kaba mekansal dağılım verilerini, temporal dinamiklerle birleştirerek sürekli (continuous 3D trajectory) bir vektör tahmini yapabilen hafif makine öğrenmesi modeli eksikliği.",
-    isefPotential: "Açık kaynaklı EEG veri setleri kullanılarak 3D kol hareketlerinin koordinatlarını sürekli olarak tahmin eden bir LSTM mimarisi dizayn edilip doğruluk oranı gösterilebilir.",
+    id: 14,
+    category: "Fizik",
+    domain: "Kuantum Algılayıcılar",
+    subDomain: "Nitrojen-Boşluk Merkezleri (NV Centers) ve Manyetometri",
+    literatureStatus: "Elmaslardaki NV (Nitrojen-Vacancy) merkezleri oda sıcaklığında manyetik alan ölçebilir fakat mikrobiyolojik seviyede sinyal-gürültü oranı (SNR) optik odaklanma limitleri sebebiyle zayıftır.",
+    researchGap: "Biyolojik hücre kültürleri çevresinde piko-Tesla düzeyinde bölgesel aksiyon potansiyelini (manyetik dalgayı) okuyabilmek için, yönlendirilmiş optik anten geometrisine sahip entegre nano-elmas sensör mimarisi eksikliği.",
+    isefPotential: "Plazmonik altın nanopartiküllerle kaplanmış bir nanoelmas dizisi yapılarak (veya simüle edilerek) floresan ışıma oranının %300'e kadar arttığı ve daha hassas manyetik alan okunabildiği ispatlanabilir.",
     references: [
-      { title: "Continuous Decoding of 3D Arm Trajectories from Non-Invasive EEG Signals", journal: "Journal of Neural Engineering (2024)", link: "https://iopscience.iop.org/journal/1741-2552", doi: "10.1088/1741-2552/acXXXX" },
-      { title: "Noise Reduction and Spatial Filtering Advances in EEG-based BCI Systems", journal: "IEEE Transactions on Biomedical Engineering (2024)", link: "https://ieeexplore.ieee.org/", doi: "10.1109/TBME.2024.XXXX" }
-    ],
-    color: "#ef4444"
-  },
-  {
-    id: 8,
-    category: "Biyoloji",
-    domain: "Tarım Teknolojileri & Nanomateryaller",
-    subDomain: "Bitkilerde Zararlı Tespitine Yönelik RNAi Taşıma Sistemleri",
-    literatureStatus: "Tarım zararlılarına karşı toksik kimyasallar yerine RNA müdahalesi (RNAi) gelecek vadetmektedir. Ancak dsRNA doğada hücresel zarlardan ve bitki yaprak kütikülünden geçemeyip çok hızlı parçalanmaktadır.",
-    researchGap: "Toprağı ve suyu zehirlemeyen, yüksek miktarda RNA kaplayabilen ve bitkilerin stoma açıklığına uyumlu spesifik nanotaşıyıcı komplekslerin tarlabaşı uygulama sisteminin eksikliği.",
-    isefPotential: "Geliştirilecek bir kitosan bazlı nanotaşıyıcı prototipinin bitki yaprağı modeline (Arabidopsis) penetrasyonu basit floresan mikroskobu altında analiz edilerek sunulabilir.",
-    references: [
-      { title: "Nanoparticle-mediated RNAi Delivery for Sustainable Crop Protection", journal: "Nature Plants (2024)", link: "https://www.nature.com/nplants/", doi: "10.1038/s41477-024-XXXXX" },
-      { title: "Stability and Penetration Barriers of dsRNA in Agricultural Settings", journal: "ACS Nano (2024)", link: "https://pubs.acs.org/journal/ancac3", doi: "10.1021/acsnano.4cXXXXX" }
-    ],
-    color: "#84cc16"
-  },
-  {
-    id: 9,
-    category: "Teknoloji ve Tasarım",
-    domain: "Siber Güvenlik & Büyük Dil Modelleri",
-    subDomain: "AI Sistemlerinde Adversarial Prompt Injection Analizi",
-    literatureStatus: "Büyük dil modellerinin uygulamalara entegrasyonu hızla artmaktadır. Ancak modeller, Adversarial Prompt Injection saldırıları ile kolayca kısıtlamaları atlamakta veya özel verileri sızdırmaktadır.",
-    researchGap: "Ağ katmanında, NLP tabanlı istatiksel analizler aracılığıyla sıfırıncı-gün (zero-day) anlamsal enjeksiyon saldırılarını yüksek hızla saptayabilen (<100ms) hafif siklet bir savunma (firewall) arayüzü eksikliği.",
-    isefPotential: "İkinci bir küçük, hızlı (SLM) yerel modelin; açık kaynaklı LLaMA'ya giden promptların semantik yönünü inceleyen bir filtre olarak kurgulanması ve bypass denemelerinin %90+ oranla bloklanması.",
-    references: [
-      { title: "Vulnerabilities and Security Defenses in Large Language Models against Prompt Injection", journal: "IEEE Security and Privacy (2024)", link: "https://ieeexplore.ieee.org/", doi: "10.1109/MSEC.2024.XXXX" },
-      { title: "Jailbreaking AI: Mechanistic Interpretability of Adversarial Attacks on LLMs", journal: "arXiv Preprints / ACM CCS (2024)", link: "https://arxiv.org/", doi: "10.48550/arXiv.2402.XXXXX" }
-    ],
-    color: "#f43f5e"
-  },
-  {
-    id: 10,
-    category: "Kimya",
-    domain: "Uzay Mühendisliği & Gelişmiş Kompozitler",
-    subDomain: "Alçak Dünya Yörüngesi İçin (LEO) Kendi Kendini Onaran Polimerler",
-    literatureStatus: "LEO'daki mikro-meteorid etkileri sonucu ortaya çıkan yapısal hasarlar uzay görevleri için ölümcüldür. Uzaydaki radyasyon mevcut mikro-kapsül polimer sistemlerini hızla bozmaktadır.",
-    researchGap: "Aşırı düşük sıcaklık ve yüksek radyasyonlu uzay vakum koşullarında kimyasal özelliğini yitirmeden hızlı iç onarım gerçekleştirebilen vitrimer (vitrimer polymer glass) bazlı epoksi sistemlerin tasarlanması.",
-    isefPotential: "Çapraz bağlı vitrimer polimer sistemleri, çatladığında tekrar birleşecek şekilde sentezlenebilir. Ardından dayanım testi ve vakum simülasyonu altında çatlak iyileşmesi ispatlanabilir.",
-    references: [
-      { title: "Radiation-resistant Self-healing Polymers for Aerospace Applications", journal: "Advanced Materials (2024)", link: "https://onlinelibrary.wiley.com/journal/15214095", doi: "10.1002/adma.2024XXXXX" },
-      { title: "Vitrimers in Extreme Temperature Environments: Mechanisms and Limitations", journal: "Polymer Chemistry (2024)", link: "https://pubs.rsc.org/", doi: "10.1039/D4PY0XXXX" }
+      { title: "Plasmon-enhanced room-temperature quantum sensing", journal: "Nature Photonics (2024)", link: "", doi: "10.1038/s41566-XXXX" }
     ],
     color: "#0ea5e9"
   },
   {
-    id: 11,
-    category: "Biyoloji",
-    domain: "Biyoinformatik & Veri Bilimi",
-    subDomain: "Uzamsal Transkriptomik (Spatial Transcriptomics) Veri Sıkıştırma",
-    literatureStatus: "Tüm hücrelerin gen frekans verilerini konumları ile çıkaran analizler bulut altyapılarında transfer darboğazlarına yol açmaktadır (TB boyutlarında veri).",
-    researchGap: "Biyolojik sinyallerin korelasyonunu kullanan, 3D uzamsal özellikleri kaybetmeyen ve yüksek verimli (lossless) tensör sıkıştırma algoritmalarının eksikliği.",
-    isefPotential: "Mevcut ZIP metotlarına alternatif olarak, gen ekspresyon düzeylerini 3 boyutlu tensör haritalarına dönüştürüp, Otomatik Kodlayıcı (Autoencoder) kullanarak veriyi asıl boyutunun %10'una düşüren bir Python algoritması yazılabilir.",
+    id: 15,
+    category: "Fizik",
+    domain: "Optoelektronik ve Fotonik",
+    subDomain: "Yonga Üstü Tıbbi Lazer Sensörler",
+    literatureStatus: "Giyilebilir optik sensörler kanda fotopletismografi (PPG) okurken deri kalınlığı, melanin seviyesi ve hareket artefaktlarından yüksek oranda etkilenmektedir.",
+    researchGap: "Spektrumu değiştirilebilir (tunable) ve deri altı kılcal damarlarının derinliğine göre dalga boyunu dinamik olarak kalibre edebilen ultra minyatürize dikey-kavite (VCSEL) lazer matrisi optimizasyonu.",
+    isefPotential: "Farklı ten renkleri ve deri altı yağ oranlarında yapay zeka ile otomatik lümen ve frekans kontrolü sağlayan bir açık kaynak PPG + VCSEL optik modül entegrasyonu kodlanabilir.",
     references: [
-      { title: "Data and Computational Challenges in High-Resolution Spatial Transcriptomics", journal: "Nature Genetics (2024)", link: "https://www.nature.com/ng/", doi: "10.1038/s41588-024-XXXXX" },
-      { title: "Tensor Decomposition Methods for Biological Big Data Compression", journal: "Bioinformatics (2024)", link: "https://academic.oup.com/bioinformatics", doi: "10.1093/bioinformatics/btaeYYY" }
+      { title: "Dynamically tunable VCSEL arrays for skin-agnostic biometrics", journal: "Optics Express (2024)", link: "", doi: "10.1364/OE.XXXX" }
     ],
-    color: "#3b82f6"
+    color: "#14b8a6"
+  },
+
+  // YENİ EKLENEN DEVASA VERİ TABANI - KİMYA
+  {
+    id: 16,
+    category: "Kimya",
+    domain: "Yeşil Kimya ve Geri Dönüşüm",
+    subDomain: "Lityum İyon Pillerin Hidrometalurjik Geri Kazanımı",
+    literatureStatus: "Atık Lityum pillerden kritik metallerin (Kobalt, Nikel) asit liçi ile çıkarılması, oldukça reaktif ve zehirli bileşikler olan inorganik asitler kullanılarak yapılmaktadır.",
+    researchGap: "Organik asitler (örn: askorbik, sitrik asit) ile Derin Ötektik Çözücüler (DES) kombinasyonu kullanılarak 50°C altında dahi %95 verimlilikle kobalt ve lityum çözünmesini sağlayan kinetik model eksikliği.",
+    isefPotential: "Limon asidi ve kolin klorür karışımına dayalı yeni bir DES formülasyonu yapılarak akıllı telefon bataryası atıklarından minimum atık su ile yüksek oranda kobalt oksit çökelmesi sağlanabilir.",
+    references: [
+      { title: "Green Recovery of Spent Li-ion Battery Cathodes via Deep Eutectic Solvents", journal: "ACS Sustainable Chemistry & Engineering (2024)", link: "", doi: "10.1021/acssuschemeng.XXXX" }
+    ],
+    color: "#84cc16"
   },
   {
-    id: 12,
-    category: "Fizik",
-    domain: "Yenilenebilir Enerji Depolama",
-    subDomain: "Katı Hal Bataryalarında (Solid-State) Lityum Dendrit Oluşumunun Engellenmesi",
-    literatureStatus: "Katı hal piller patlama riski göstermez. Ancak, şarj süreçleri boyunca lityum metal anottan katı elektrolit içine doğru mikroskobik 'dendrit' dallanmaları sızarak pillere kısa devre yaptırmaktadır.",
-    researchGap: "Arayüz sürtünme direncini artırmadan lityum iyon akışını lokalize edip dendrit çekirdeklenmesini baskılayabilen, hem iletken hem esnek katı elektrolit arayüzü (SEI) katmanlarının entegrasyon eksiği.",
-    isefPotential: "Elektro-eğirme yöntemi ile ince bir koruyucu polimer-seramik membran sentezlenip ticari bir lityum pili anotu arasına konumlandırılır. Kısa devre oluşum süresini ne kadar uzattığı analiz edilebilir.",
+    id: 17,
+    category: "Kimya",
+    domain: "Hidrojen Ekonomisi",
+    subDomain: "Katı Hal Hidrojen Depolama Yapıları",
+    literatureStatus: "Gaz hidrojen depolamak için >700 bar basınç veya kriyojenik (-253°C) sıcaklıklar gerekmekte, bu da hidrojen araçlarının ticari güvenliğini riske atmaktadır.",
+    researchGap: "Oda sıcaklığında tersinir (reversible) hidrojen salımı ve emilimi yapabilen, ağırlıkça %6'dan fazla hidrojen kapasitesine sahip katalizör katkılı magnezyum hidrür (MgH2) alaşımlarının dehidrojenasyon kinetiğindeki yavaşlık.",
+    isefPotential: "Karbon nanotüp dokulu bir 3D iskele sistemi üzerinde nikel katalizörlü magnezyum birikimi sağlanarak dehidrojenasyon sıcaklığı 300°C'den 150°C'ye düşürülebilir (deney veya DFT simülasyonu).",
     references: [
-      { title: "Suppression of Lithium Dendrites via Engineered Artificial SEI Layers", journal: "Nature Energy (2024)", link: "https://www.nature.com/nenergy/", doi: "10.1038/s41560-024-XXXXX" },
-      { title: "Interfacial Challenges in Solid-State Lithium Metal Batteries", journal: "Advanced Energy Materials (2024)", link: "https://onlinelibrary.wiley.com/journal/16146840", doi: "10.1002/aenm.2024XXXXX" }
+      { title: "Kinetics Enhancement of Hydrogen Storage in MgH2 via 3D Nanocarbon Frameworks", journal: "Journal of Materials Chemistry A (2024)", link: "", doi: "10.1039/D4TAXXXXX" }
     ],
-    color: "#eab308"
+    color: "#f59e0b"
+  },
+  {
+    id: 18,
+    category: "Kimya",
+    domain: "Nanoteknoloji ve Biyomateryaller",
+    subDomain: "Geniş Spektrumlu Antiviral / Hidrofobik Kaplamalar",
+    literatureStatus: "Hastane yüzeylerinde kullanılan antibakteriyel kaplamalar (gümüş iyon bazlı vb.) çoğu virüse karşı etkisizdir ve mekanik aşınma sonucu kısa sürede silinir.",
+    researchGap: "UV ışığı olmaksızın karanlıkta bile ROS (Reaktif Oksijen Türü) üretebilen ve aynı zamanda damlacık tutunmasını engelleyen, poliüretan bazlı, aşınmaya dayanıklı piezo-katalitik kuantum nokta kaplaması eksikliği.",
+    isefPotential: "Çinko oksit (ZnO) nanopartiküllerinin rüzgar veya insanların yürüme titreşiminden kaynaklanan piezoelektrik etkiyle ROS üretmesini kullanan bir paspas veya yüzey seramiği kaplaması prototipi.",
+    references: [
+      { title: "Piezo-catalytic Dark-active Surfaces for Continuous Antiviral Activity", journal: "Advanced Functional Materials (2024)", link: "", doi: "10.1002/adfm.XXXXX" }
+    ],
+    color: "#ec4899"
+  },
+
+  // YENİ EKLENEN DEVASA VERİ TABANI - BİYOLOJİ
+  {
+    id: 19,
+    category: "Biyoloji",
+    domain: "Mikrobiyom Mühendisliği",
+    subDomain: "Gut-Brain Axis (Bağırsak-Beyin Ekseni) Modellemesi",
+    literatureStatus: "Bağırsak florasının depresyon ve Parkinson gibi hastalıklarda rol oynadığı bilinse de, bağırsaktan beyne nörotransmitter geçişini simüle eden gerçekçi in vitro (laboratuvar tüpü) modeller bulunmamaktadır.",
+    researchGap: "Kan-beyin bariyeri endotel hücreleri ve bağırsak epitel dokusunu aynı kanallarda birbirine bağlayan, hücresel 'çapraz konuşmayı' mikroakışkan sistemlerle simüle eden 'Organ - on - a - chip' eksikliği.",
+    isefPotential: "İki ana odası (bağırsak sızıntı modeli ve kan-beyin bariyeri) olan PDMS mikroakışkan bir çip tasarlanıp, 3D yazıcıyla basılarak flüoresan boyalar (örn: FITC-dextran) üzerinden mikrobiyotik geçirgenlik sıvı dinamiği ile test edilebilir.",
+    references: [
+      { title: "Microfluidic In Vitro Models of the Gut-Brain Axis", journal: "Nature Biomedical Engineering (2024)", link: "", doi: "10.1038/s41551-XXXX" }
+    ],
+    color: "#a855f7"
+  },
+  {
+    id: 20,
+    category: "Biyoloji",
+    domain: "Tarım ve Ekoloji",
+    subDomain: "Mikroplastik Parçalayan Yeni Nesil Bakteriler",
+    literatureStatus: "Okyanuslarda ve tarım topraklarında mikroplastik kirliliği artmaktadır. Plastik parçalayan keşfedilmiş PETase enzimleri, doğal sıcaklık ve pH farklılıkları altında çok çabuk inaktif hale gelir.",
+    researchGap: "PETase enzimlerinin ekstrem çevre koşullarında (örn. okyanus suyu tuzluluğu) verimli çalışmasını sağlayacak protein iskeletini güçlendirilmiş (directed evolution) kimerik dizilerine ihtiyaç vardır.",
+    isefPotential: "Biyoinformatik araçlar kullanılarak (AlphaFold2 veya Rosetta) yüksek sıcaklıkta stabil kalabilecek mutasyonlu bir FAST-PETase enzim yapısı önermek ve docking (kenetlenme) analiziyle plastik zincirlerini kırma afinitesini kanıtlamak.",
+    references: [
+      { title: "Machine-learning-guided directed evolution for plastic degradation", journal: "Nature (2024)", link: "", doi: "10.1038/s41586-XXXX" }
+    ],
+    color: "#22c55e"
+  },
+  {
+    id: 21,
+    category: "Biyoloji",
+    domain: "Biyomimikrili Mühendislik",
+    subDomain: "Örümcek İpeğinden Esinlenmiş Doku İskeleleri (Scaffolds)",
+    literatureStatus: "Yanık tedavilerinde ve kemik doku onarımında kullanılan kolajen iskeleleri düşük mekanik dayanıklılığa sahiptir ve vücut içinde çok erken çözünür.",
+    researchGap: "Bakteriyel gen aktarımıyla elde edilmiş rekombinant örümcek ipeği proteinleri kullanılarak (spidroin), memeli kök hücrelerinin (MSC) yapışma ve çoğalma (proliferation) potansiyelini artıran topolojik hiyerarşik 3D doku iskelesi eksikliği.",
+    isefPotential: "Biyouyumlu bir nanolif (electrospinning) ünitesiyle, örümcek ipeği ve jelatinin belirli oranlarda birleştirilerek sentetik bir yapay deri matrisi dokunması, dayanıklılık simülasyonlarının gerçekleştirilmesi.",
+    references: [
+      { title: "Recombinant Spider Silk Scaffolds for Enhanced Tissue Regeneration", journal: "Biomaterials (2024)", link: "", doi: "10.1016/j.biomaterials.XXXX" }
+    ],
+    color: "#fbbf24"
+  },
+
+  // YENİ EKLENEN DEVASA VERİ TABANI - TEKNOLOJİ VE TASARIM
+  {
+    id: 22,
+    category: "Teknoloji ve Tasarım",
+    domain: "Robotik & Nöromorfik Sistemler",
+    subDomain: "Otonom Sürü (Swarm) Robotlar",
+    literatureStatus: "Mikro sürü robotlarının (örneğin yangın aramada veya maden tespitinde) koordinasyonu, hücresel kuleler üzerinden yüksek bant genişlikli merkezi iletişime ihtiyaç duymakta bu da kırsalda çöküşe neden olmaktadır.",
+    researchGap: "Çevrelerinden aldıkları sınırlı verilerle merkeze ihtiyaç duymadan kendi kendine çarpışma önleyen ve hedef tespit eden (karınca kolonisi esinli) düşük frekanslı peer-to-peer (P2P) RF optimizasyon algoritmalarının eksikliği.",
+    isefPotential: "Üç adet ucuz Arduino veya ESP32 tabanlı mikro araçla merkezi bir sunucu olmaksızın, engellerden kaçan ve odadaki bir objeyi ('besin' mantığı) haritalayan sürü algoritması tasarlamak ve test etmek.",
+    references: [
+      { title: "Decentralized Swarm Intelligence via Low-Bandwidth Networks", journal: "IEEE Transactions on Robotics (2024)", link: "", doi: "10.1109/TRO.2024.XXXX" }
+    ],
+    color: "#f43f5e"
+  },
+  {
+    id: 23,
+    category: "Teknoloji ve Tasarım",
+    domain: "İnsan-Bilgisayar Etkileşimi (HCI)",
+    subDomain: "Haptik Feedback ve VR Arayüzleri",
+    literatureStatus: "Mevcut VR sistemleri ve eldivenleri dokunma hissi vermek için ağır titreşim motorları kullanır ve bu da gerçek objelerin pürüzlülüğünü, ısı değişimini veya şeklini hissettiremez.",
+    researchGap: "Parmak ucunda yüksek çözünürlüklü sürtünme oluşturmak üzere elektro-statik modülasyonu ve Peltier tabanlı (termal) sıcaklık değişimlerini 2mm kalınlık altında senkronize sunabilen giyilebilir kontrolcü mimarisi eksikliği.",
+    isefPotential: "Dokunulan sanal bir taşın veya buzun hissini simüle edebilmek amacıyla 3D yazıcıdan basılmış küçük silikon yüzüklere sıvı-metal kaplama ve ufak bir sıcaklık kontrol devresi yerleştirerek reaksiyon sürelerini kanıtlamak.",
+    references: [
+      { title: "High-Resolution Electrostatic Haptic Interfaces for Virtual Reality", journal: "Computer Graphics Forum (ACM SIGGRAPH) (2024)", link: "", doi: "10.1111/cgf.XXXX" }
+    ],
+    color: "#2dd4bf"
+  },
+  {
+    id: 24,
+    category: "Teknoloji ve Tasarım",
+    domain: "Erişilebilirlik ve Akıllı Asistanlar",
+    subDomain: "İşitme Engelliler İçin Dinamik Çevresel Ses İzleme Merkezi",
+    literatureStatus: "İşitme cihazları arka plan gürültüsünü filtreleyebiliyor ancak kullanıcılara arkadan gelen spesifik tehdit edici (kornalar, sirenler, bağırmalar) seslerin yönü ve türü hakkında görsel/titreşimli farkındalık sunmuyor.",
+    researchGap: "Mikrofon diziliminin (microphone array) aldığı ses vektörlerinden sadece 'tehlike' odaklı verileri ayırt edip, akıllı saatlerde çok yönlü titreşim haritalaması sunabilen, düşük güç tüketimli AI donanım tasarımı eksikliği.",
+    isefPotential: "Basit bir yaka mikrofonu modülü ile Tensorflow Lite Audio Classification algoritmasının ESP32 mikrokontrölcü üzerinde çalıştırılması; kornayı algılayıp akıllı bilekliğe (bluetooth) sağdan ya da soldan titreme emri göndermesi.",
+    references: [
+      { title: "Directional Threat Detection via Edge Audio Intelligence for Accessibility", journal: "ACM Conference on Accessible Computing (ASSETS) (2024)", link: "", doi: "10.1145/XXXXXXX" }
+    ],
+    color: "#0284c7"
+  },
+  {
+    id: 25,
+    category: "Kimya",
+    domain: "Deniz Kirliliği & Nanoadsorbanlar",
+    subDomain: "Ağır Metal Sızıntısı Filtreleme Tesisleri",
+    literatureStatus: "Fabrika atıklarıyla suya karışan ağır metaller (Kurşun, Cıva, Krom) karbon filtrelerden sızabilmekte; mevcut spesifik iyon-değiştiriciler sentetik olmakta ve yüksek maliyet oluşturmaktadır.",
+    researchGap: "Meyve kabuklarından (örneğin nar ve portakal) türetilmiş, biyokömür ile manyetik demir oksit nanopartikül kompozitlerinin iç içe geçtiği ve sadece basit bir dış mıknatıs ile sudan tamamen geri toplanabilen yüksek kapasiteli adsorbanların geliştirilmemesi.",
+    isefPotential: "Lise/üniversite laboratuvarında mutfak atıklarının piroliz yöntemiyle manyetik biyokömüre dönüştürülmesi ve kirlenmiş sulardan ağır metal (veya metilen mavisi boyası) giderim oranlarının (>%98) tespiti.",
+    references: [
+      { title: "Magnetic biochar composites derived from agricultural waste for heavy metal removal", journal: "Chemical Engineering Journal (2024)", link: "", doi: "10.1016/j.cej.XXXX" }
+    ],
+    color: "#c026d3"
+  },
+  {
+    id: 26,
+    category: "Fizik",
+    domain: "Savunma ve Havacılık Teknolojileri",
+    subDomain: "Hiperses (Hypersonic) Hızlarda Termal Bariyer Geçişleri",
+    literatureStatus: "Mach 5 uçuş hızlarında uzay ve savunma araçlarının burun kısmında oluşan 2000°C ötesi plazma ısınması termal kalkanlarda aşınma ve radyo iletişimi kaybına (blackout) yol açmaktadır.",
+    researchGap: "Elektromanyetik dalgaları zayıflatmayan ve yüksek ablasyon (ısıl buharlaşma) direncine sahip, Zirkonyum Diborür (ZrB2) katkılı seramik-matris Ultra Yüksek Sıcaklık (UHTC) kompozit katmanlarının dielektrik özelliklerinin optimize edilememesi.",
+    isefPotential: "Küçük ölçekli sentetik UHTC kompozit disk numunelerinin oluşturulması ve bilgisayar simülasyonlarında (ANSYS) elektromanyetik geçirgenliklerinin (radar dalgası kaybının) incelenmesi ile iletişimi kesmeyen kalkan modelinin tasarlanması.",
+    references: [
+      { title: "Dielectric optimization of UHTC for hypersonic vehicle radomes", journal: "Journal of the European Ceramic Society (2024)", link: "", doi: "10.1016/j.jeurceramsoc.XXXX" }
+    ],
+    color: "#f97316"
+  },
+  {
+    id: 27,
+    category: "Teknoloji ve Tasarım",
+    domain: "Veri Depolama & Fotonik",
+    subDomain: "DNA Tabanlı Bilgi Depolama Çözücüleri (Decoding)",
+    literatureStatus: "DNA üzerine petabaytlarca veri yazılabiliyor olsa da, bu verinin sıralayıcı cihazlardan (Nanopore sequencing vb.) geçip okunması sırasında kaymalar ve silişler (insertion/deletion errors) oluştuğu için orijinal metni geri çağırmak zordur.",
+    researchGap: "Nanopore sinyallerinden okunan gürültülü DNA varyantlarını klasik yöntemlere (Viterbi vs.) kıyasla 10 kat daha hızlı analiz edebilecek Transformer tabanlı hata telafisi (error-correction) dekoder mimarilerinin bulunmaması.",
+    isefPotential: "Yapay zeka modellerinin hatalı ve parçalanmış DNA baz okuma dosyalarını alıp veri (örneğin bir JPEG fotoğrafı) kurtarma yüzdelerini artıracak bir açık kaynak hata kontrol kodu algoritması önermek.",
+    references: [
+      { title: "Transformer-based error correction for Nanopore DNA storage reading", journal: "Nature Communications (2024)", link: "", doi: "10.1038/s41467-XXXX" }
+    ],
+    color: "#64748b"
+  },
+  {
+    id: 28,
+    category: "Biyoloji",
+    domain: "Kanserde Erken Tanı",
+    subDomain: "Likit Biyopsi (Sıvı Biyopsi) ve Serbest Tümör DNA'sı (ctDNA)",
+    literatureStatus: "Kan yoluyla alınan likit biyopsilerde kanda gezen serbest tümör DNA'sı oranı yüz milyonda bir seviyesinde olduğundan klasik PCR (Polimeraz Zincir Reaksiyonu) veya dizileme testleri kanseri evre 1'de kaçırır.",
+    researchGap: "Sağlıklı hücre DNA'sını baskılayarak kanserli bölge mutasyonlarını (örn: KRAS, p53) spesifik olarak sinyal amplifikasyonuna (çoğalmaya) iten CRISPR-Cas12a entegreli manyetik zenginleştirme (magnetic enrichment) kiti metodolojisi zayıftır.",
+    isefPotential: "Basit ve maliyetsiz CRISPR/Cas12a aktivasyonunu kullanarak sentetik kanser DNA numunelerinde florometrik renk değiştiren kağıt tabanlı (paper-based) hızlı tanı sensörü geliştirmek.",
+    references: [
+      { title: "CRISPR-Cas12a powered amplification strategy for ultra-sensitive ctDNA detection", journal: "Biosensors and Bioelectronics (2024)", link: "", doi: "10.1016/j.bios.XXXX" }
+    ],
+    color: "#1d4ed8"
   }
 ];
